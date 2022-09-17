@@ -1,0 +1,1 @@
+insert into MEDECIN(id, name) values(1, 'Dr House');

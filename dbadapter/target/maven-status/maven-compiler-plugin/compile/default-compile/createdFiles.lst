@@ -1,0 +1,4 @@
+com\sof\dbadapter\MedecinEntity.class
+com\sof\dbadapter\MedecinAdapter.class
+com\sof\dbadapter\MedecinRepository.class
+com\sof\dbadapter\MedecinServiceImpl.class
