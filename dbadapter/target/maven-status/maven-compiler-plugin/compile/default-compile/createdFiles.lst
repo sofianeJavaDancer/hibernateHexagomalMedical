@@ -1,4 +1,4 @@
-com\sof\dbadapter\MedecinEntity.class
-com\sof\dbadapter\MedecinAdapter.class
-com\sof\dbadapter\MedecinRepository.class
-com\sof\dbadapter\MedecinServiceImpl.class
+com\sof\dbadapter\entities\MedecinEntity.class
+com\sof\dbadapter\mapper\MedecinMapper.class
+com\sof\dbadapter\repository\MedecinRepository.class
+com\sof\dbadapter\service\MedecinServiceImpl.class

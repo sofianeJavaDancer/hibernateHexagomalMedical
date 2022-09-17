@@ -1,21 +1,22 @@
 package com.sof.webadapter.controller;
 
-import com.sof.dbadapter.MedecinServiceImpl;
+import com.sof.business.ports.MedecinService;
 import com.sof.domain.Medecin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/basics")
-public class BasicController {
+@RequestMapping("/api/medecins")
+public class MedecinController {
     @Autowired
-    private MedecinServiceImpl basicService;
+    private MedecinService medecinService;
 
-    @GetMapping("")
-    public Medecin findAll() {
-        return basicService.getMedecinById(1l);
+    @GetMapping("/{id}")
+    public Medecin getMedecin(@PathVariable Long id) {
+        return medecinService.getMedecinById(id);
     }
 
 //    @GetMapping("/{id}")

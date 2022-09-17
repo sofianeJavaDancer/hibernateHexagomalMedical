@@ -1,4 +1,4 @@
-package com.sof.dbadapter;
+package com.sof.dbadapter.entities;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
