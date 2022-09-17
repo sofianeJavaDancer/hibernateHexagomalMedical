@@ -2,6 +2,8 @@ package com.sof.webadapter.controller;
 
 import com.sof.business.ports.MedecinService;
 import com.sof.domain.Medecin;
+import com.sof.webadapter.mapper.MedecinResourceMapper;
+import com.sof.webadapter.resources.MedecinResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,9 +16,13 @@ public class MedecinController {
     @Autowired
     private MedecinService medecinService;
 
+    @Autowired
+    private MedecinResourceMapper medecinResourceMapper;
+
     @GetMapping("/{id}")
-    public Medecin getMedecin(@PathVariable Long id) {
-        return medecinService.getMedecinById(id);
+    public MedecinResource getMedecin(@PathVariable Long id) {
+        Medecin medecin = medecinService.getMedecinById(id);
+        return medecinResourceMapper.fromDomainToResource(medecin);
     }
 
 //    @GetMapping("/{id}")
