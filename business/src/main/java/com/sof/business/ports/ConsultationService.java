@@ -1,10 +1,9 @@
 package com.sof.business.ports;
 
-
 import com.sof.domain.Consultation;
 import com.sof.domain.Medecin;
 
-public interface MedecinService {
+public interface ConsultationService {
 
-    Medecin getById(Long id);
+    Consultation getById(Long id);
 }

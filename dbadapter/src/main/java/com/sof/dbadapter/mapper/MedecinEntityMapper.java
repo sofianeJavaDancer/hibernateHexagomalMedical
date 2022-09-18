@@ -5,10 +5,12 @@ import com.sof.dbadapter.entities.MedecinEntity;
 import com.sof.domain.Medecin;
 import org.mapstruct.Mapper;
 
-@Mapper(componentModel = "spring")
-public interface MedecinMapper {
+import java.util.Collection;
+import java.util.Set;
 
-    MedecinEntity fromDomainToAdapter(Medecin medecin);
+@Mapper(componentModel = "spring")
+public interface MedecinEntityMapper {
 
     Medecin fromAdapterToDomain(MedecinEntity medecinEntity);
+    Set<Medecin> fromAdapterToDomain(Collection<MedecinEntity> medecinEntities);
 }

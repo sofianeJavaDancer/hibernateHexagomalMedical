@@ -21,7 +21,7 @@ public class MedecinController {
 
     @GetMapping("/{id}")
     public MedecinResource getMedecin(@PathVariable Long id) {
-        Medecin medecin = medecinService.getMedecinById(id);
+        Medecin medecin = medecinService.getById(id);
         return medecinResourceMapper.fromDomainToResource(medecin);
     }
 

@@ -1,1 +1,6 @@
+com\sof\domain\Facility.class
+com\sof\domain\Meeting.class
+com\sof\domain\SpecialityEnum.class
+com\sof\domain\Consultation.class
 com\sof\domain\Medecin.class
+com\sof\domain\Patient.class
