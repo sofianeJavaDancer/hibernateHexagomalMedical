@@ -5,11 +5,11 @@ import com.sof.domain.Medecin;
 import com.sof.webadapter.mapper.MedecinResourceMapper;
 import com.sof.webadapter.resources.MedecinResource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Set;
+
+@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping("/api/medecins")
 public class MedecinController {
@@ -23,6 +23,12 @@ public class MedecinController {
     public MedecinResource getMedecin(@PathVariable Long id) {
         Medecin medecin = medecinService.getById(id);
         return medecinResourceMapper.fromDomainToResource(medecin);
+    }
+
+    @GetMapping("")
+    public Set<MedecinResource> getAllMedecin() {
+        Set<Medecin> medecins = medecinService.getAll();
+        return medecinResourceMapper.fromDomainToResource(medecins);
     }
 
 //    @GetMapping("/{id}")

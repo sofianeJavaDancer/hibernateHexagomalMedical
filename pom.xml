@@ -9,6 +9,7 @@
         <module>dbadapter</module>
         <module>business</module>
         <module>domain</module>
+        <module>front-client</module>
     </modules>
 
     <parent>
