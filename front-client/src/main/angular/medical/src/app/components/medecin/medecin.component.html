@@ -1,0 +1,17 @@
+
+<table class="table table-striped table-bordered">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Nom</th>
+    <th>Spécialité</th>
+  </tr>
+  </thead>
+  <tbody *ngIf="!!medecins">
+  <tr *ngFor="let medecin of medecins">
+    <td>{{medecin.id}}</td>
+    <td>{{medecin.name}}</td>
+    <td>{{medecin.speciality}}</td>
+  </tr>
+  </tbody>
+</table>
