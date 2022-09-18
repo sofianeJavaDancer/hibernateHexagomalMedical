@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Medecin {
 
-    long id;
-
+    private long id;
     private String name;
+    private SpecialityEnum speciality;
 }
