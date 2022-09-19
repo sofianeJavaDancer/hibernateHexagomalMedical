@@ -5,11 +5,11 @@ import com.sof.domain.Consultation;
 import com.sof.webadapter.mapper.ConsultationResourceMapper;
 import com.sof.webadapter.resources.ConsultationResource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Set;
+
+@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping("/api/consultations")
 public class ConsultationController {
@@ -25,5 +25,11 @@ public class ConsultationController {
     public ConsultationResource getConsultation(@PathVariable Long id) {
         Consultation consultation = consultationService.getById(id);
         return consultationResourceMapper.fromDomainToResource(consultation);
+    }
+
+    @GetMapping("")
+    public Set<ConsultationResource> getAllPatient() {
+        Set<Consultation> consultations = consultationService.getAll();
+        return consultationResourceMapper.fromDomainToResource(consultations);
     }
 }

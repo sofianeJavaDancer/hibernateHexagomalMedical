@@ -1,13 +1,9 @@
 package com.sof.dbadapter.service;
 
 import com.sof.business.ports.PatientService;
-import com.sof.dbadapter.entities.MedecinEntity;
 import com.sof.dbadapter.entities.PatientEntity;
-import com.sof.dbadapter.entities.RendezVousEntity;
 import com.sof.dbadapter.mapper.PatientEntityMapper;
 import com.sof.dbadapter.repository.PatientRepository;
-import com.sof.domain.Medecin;
-import com.sof.domain.Meeting;
 import com.sof.domain.Patient;
 import lombok.Getter;
 import lombok.Setter;

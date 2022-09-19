@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import {ConsultationService} from '../../services/consultation.service';
+import {Consultation} from '../../models/consultation';
+
 @Component({
   selector: 'app-consultation',
   templateUrl: './consultation.component.html',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultationComponent implements OnInit {
 
-  constructor() { }
+  public consultations: Consultation[] = [];
+
+  constructor(private consultationService: ConsultationService) { }
 
   ngOnInit(): void {
+    this.consultationService.getAll().subscribe((consultations: any) => {
+      this.consultations = consultations;
+    })
   }
 
 }

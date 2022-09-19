@@ -1,1 +1,28 @@
-<p>meeting works!</p>
+
+<div class="mt-5 mb-5">
+  <button (click)="addMeeting()"></button>
+</div>
+
+<table class="table table-striped table-bordered table-hover table-sm">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Medecin</th>
+    <th>Patient</th>
+    <th>Date</th>
+    <th>Heure</th>
+    <th>Consultation</th>
+  </tr>
+  </thead>
+  <tbody *ngIf="!!meetings">
+  <tr *ngFor="let meeting of meetings">
+    <td>{{meeting.id}}</td>
+    <td>{{meeting.medecin.name}}</td>
+    <td>{{meeting.patient.name}}</td>
+    <td>{{meeting.date}}</td>
+    <td>{{meeting.heure}}</td>
+    <td></td>
+
+  </tr>
+  </tbody>
+</table>

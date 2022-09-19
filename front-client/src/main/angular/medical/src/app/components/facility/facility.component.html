@@ -1,1 +1,15 @@
-<p>facility works!</p>
+
+<table class="table table-striped table-bordered table-hover table-sm">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Spécialité</th>
+  </tr>
+  </thead>
+  <tbody *ngIf="!!facilities">
+  <tr *ngFor="let facility of facilities">
+    <td>{{facility.id}}</td>
+    <td>{{facility.speciality}}</td>
+  </tr>
+  </tbody>
+</table>
