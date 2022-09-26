@@ -1,0 +1,40 @@
+<div class="modal-header">
+  <h4 class="modal-title">Création d'un rendez-vous</h4>
+  <button type="button" class="btn-close" aria-label="Close"
+          (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-4">
+      <button (click)="$$displayMedecin=true">Select medecin</button>
+      <ul *ngIf="$$displayMedecin">
+        <li *ngFor="let medecin of medecins" (click)="selectMedecin(medecin)">{{medecin.name}}-{{medecin.speciality}}</li>
+      </ul>
+    </div>
+
+    <div class="col-4">
+      <button (click)="$$displayPatient=true">Select patient</button>
+      <ul *ngIf="$$displayPatient">
+        <li *ngFor="let patient of patients" (click)="selectPatient(patient)">{{patient.name}}-{{patient.email}}</li>
+      </ul>
+    </div>
+
+    <div class="col-2">
+      <span>{{date}}</span>
+    </div>
+
+    <div class="col-2">
+      <span>{{heure}}</span>
+    </div>
+
+  </div>
+
+  <div class="row" *ngIf="medecin && patient">
+    <span>{{patient.name}}-{{patient.email}}</span> --> <span>{{medecin.name}}-{{medecin.speciality}}</span>
+  </div>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="dismiss()">Annuler</button>
+  <button type="button" class="btn btn-outline-dark" (click)="create()">Confirmer</button>
+</div>

@@ -24,4 +24,9 @@ export class MeetingService {
     let url = this.meetingEndPoint;
     return this.httpClient.get(url);
   }
+
+  add(meeting: Meeting): Observable<any> {
+    let url = this.meetingEndPoint + '/create';
+    return this.httpClient.post(url, meeting);
+  }
 }

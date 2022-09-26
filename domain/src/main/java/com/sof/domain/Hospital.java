@@ -1,20 +1,17 @@
-package com.sof.dbadapter.entities;
+package com.sof.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name="HOSPITAL")
-@DiscriminatorValue("HOSP")
 @Setter
 @Getter
+@AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class HospitalEntity extends MedicalFacilityEntity {
+public class Hospital extends MedicalFacility {
 
     private int capacity;
 }

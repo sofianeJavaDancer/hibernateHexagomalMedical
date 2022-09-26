@@ -1,0 +1,43 @@
+<div class="modal-header">
+  <h4 class="modal-title">Création d'un nouvau Centre Medical</h4>
+  <button type="button" class="btn-close" aria-label="Close"
+          (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+
+<form class="row" [formGroup]="medicalFacilityFormGroup" (ngSubmit)="create()" novalidate>
+
+  <div class="modal-body">
+    <div class="row">
+
+      <div class="col-3">
+        <button type="button" (click)="$$displayType=true">Select Type {{type}}</button>
+        <ul *ngIf="$$displayType">
+          <li *ngFor="let type of types" (click)="selectType(type)">{{type}}</li>
+        </ul>
+      </div>
+
+      <div class="col-3" *ngIf="!!type">
+        <label class="">Adresse</label>
+        <input type="text" class="" formControlName="adresseFormControl">
+      </div>
+
+      <div class="col-3" *ngIf="type == 'CLINIQUE'">
+        <label class="">Prix</label>
+        <input type="number" class="" formControlName="rateFormControl">
+      </div>
+
+      <div class="col-3" *ngIf="type == 'HOSPITAL'">
+        <label class="">Capacité</label>
+        <input type="number" class="" formControlName="capacityFormControl">
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="dismiss()">Annuler</button>
+    <button type="submit" class="btn btn-outline-dark">Confirmer</button>
+  </div>
+
+</form>

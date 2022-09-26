@@ -23,4 +23,9 @@ export class FacilityService {
     let url = this.facilityEndPoint;
     return this.httpClient.get(url);
   }
+
+  add(facility: Facility): Observable<any> {
+    let url = this.facilityEndPoint + '/create';
+    return this.httpClient.post(url, facility);
+  }
 }

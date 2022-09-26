@@ -1,6 +1,6 @@
 export interface Medecin {
 
-  id: string;
+  id?: string;
   name: string;
   speciality: string;
 }

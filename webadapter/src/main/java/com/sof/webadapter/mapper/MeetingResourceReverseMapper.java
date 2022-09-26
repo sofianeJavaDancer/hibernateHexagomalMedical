@@ -7,7 +7,7 @@ import org.mapstruct.Mapper;
 import java.util.Collection;
 import java.util.Set;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = LocalDateMapper.class)
 public interface MeetingResourceReverseMapper {
 
     Meeting fromResourceToDomain(MeetingResource meeting);

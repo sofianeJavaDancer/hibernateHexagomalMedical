@@ -1,7 +1,0 @@
-com\sof\domain\SpecialityEnum.class
-com\sof\domain\Medecin.class
-com\sof\domain\Patient.class
-com\sof\domain\Facility.class
-com\sof\domain\Meeting.class
-com\sof\domain\Meeting$MeetingBuilder.class
-com\sof\domain\Consultation.class

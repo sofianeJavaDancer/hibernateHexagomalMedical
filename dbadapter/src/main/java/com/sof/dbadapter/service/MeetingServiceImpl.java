@@ -38,8 +38,8 @@ public class MeetingServiceImpl implements MeetingService {
     @Override
     public Set<Meeting> getAll() {
         List<RendezVousEntity> meetingEntities = meetingRepository.findAll();
-        final Set<Meeting> patients = meetingEntityMapper.fromAdapterToDomain(meetingEntities);
-        return patients;
+        final Set<Meeting> meetings = meetingEntityMapper.fromAdapterToDomain(meetingEntities);
+        return meetings;
     }
 
     @Override

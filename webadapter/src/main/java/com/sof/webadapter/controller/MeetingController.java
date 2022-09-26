@@ -28,12 +28,13 @@ public class MeetingController {
     }
 
     @GetMapping("")
-    public Set<MeetingResource> getAllPatient() {
+    public Set<MeetingResource> getAllMeetings() {
         Set<Meeting> consultations = meetingService.getAll();
         return meetingResourceMapper.fromDomainToResource(consultations);
     }
 
-    @PutMapping("/create")
+
+    @PostMapping("/create")
     public MeetingResource addMeeting(@RequestBody MeetingResource meetingResource) {
 
         Meeting meeting = meetingResourceReverseMapper.fromResourceToDomain(meetingResource);

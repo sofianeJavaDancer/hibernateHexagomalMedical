@@ -1,22 +1,17 @@
-package com.sof.dbadapter.entities;
+package com.sof.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name="CLINIQUE")
-@DiscriminatorValue("CLI")
 @Setter
 @Getter
+@AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class CliniqueEntity extends MedicalFacilityEntity {
+public class Clinique extends MedicalFacility {
 
     private double rate;
-
-
 }

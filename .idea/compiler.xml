@@ -10,6 +10,7 @@
         <module name="webadapter" />
         <module name="dbadapter" />
         <module name="business" />
+        <module name="front-client" />
         <module name="domain" />
       </profile>
     </annotationProcessing>
@@ -19,6 +20,7 @@
       <module name="business" options="-parameters" />
       <module name="dbadapter" options="-parameters" />
       <module name="domain" options="-parameters" />
+      <module name="front-client" options="-parameters" />
       <module name="webadapter" options="-parameters" />
     </option>
   </component>

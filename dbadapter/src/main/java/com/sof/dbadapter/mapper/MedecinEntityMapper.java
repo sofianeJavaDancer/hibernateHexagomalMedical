@@ -4,6 +4,7 @@ package com.sof.dbadapter.mapper;
 import com.sof.dbadapter.entities.MedecinEntity;
 import com.sof.domain.Medecin;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.Collection;
 import java.util.Set;
