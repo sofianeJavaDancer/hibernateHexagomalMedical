@@ -1,17 +1,19 @@
 package com.sof.webadapter.resources;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.http.HttpStatus;
 
-@Builder
+import java.util.ArrayList;
+import java.util.List;
+
+@AllArgsConstructor
 @NoArgsConstructor
+@Builder
+@Getter
 @Setter
-public class MedicalBusinessErrorResource extends RuntimeException {
+public class MedicalBusinessExceptionResource {
 
+    private HttpStatus status;
     private String message;
-    public MedicalBusinessErrorResource(String message) {
-        super(message);
-    }
+    private List<String> errors = new ArrayList<>();
 }

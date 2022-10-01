@@ -1,17 +1,18 @@
 package com.sof.webadapter.mapper;
 
+import com.sof.business.usecases.exceptions.EnumeratedBusinessErrors;
 import com.sof.business.usecases.exceptions.MedicalBusinessException;
 import com.sof.webadapter.resources.MedicalBusinessExceptionResource;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.springframework.http.HttpStatus;
+
+import java.util.Collections;
 
 @Mapper(componentModel = "spring")
-public interface MedicalBusinessErrorResourceMapper {
+public interface MedicalBusinessExceptionResourceMapper {
 
-    public MedicalBusinessExceptionResource fromDomainToResource(MedicalBusinessException medicalBusinessException);
+    @Mapping(target="message", expression="java(medicalBusinessException.getError().getMessage())")
+    MedicalBusinessExceptionResource fromDomainToResource(MedicalBusinessException medicalBusinessException);
 
-    default MedicalBusinessExceptionResource map(MedicalBusinessException medicalBusinessException) {
-        return MedicalBusinessExceptionResource.builder()
-                .message(medicalBusinessException.getMessage())
-                .build();
-    }
 }
