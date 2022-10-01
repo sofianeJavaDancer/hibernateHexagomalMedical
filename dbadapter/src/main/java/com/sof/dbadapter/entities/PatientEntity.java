@@ -15,7 +15,7 @@ import java.util.Set;
 public class PatientEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     private String name;
     private String insurance;

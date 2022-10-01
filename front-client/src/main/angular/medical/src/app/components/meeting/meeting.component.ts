@@ -27,9 +27,13 @@ export class MeetingComponent implements OnInit {
   private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    this.meetingService.getAll().subscribe((meetings: any) => {
-      this.meetings = meetings;
-    });
+    this.updateMeetings();
+  }
+
+  updateMeetings() {
+      this.meetingService.getAll().subscribe((meetings: any) => {
+        this.meetings = meetings;
+      });
   }
 
   addMeeting() {
@@ -42,7 +46,9 @@ export class MeetingComponent implements OnInit {
 
         modalRef.result.then((meeting: Meeting) => {
           this.meetingService.add(meeting).subscribe((createdMeeting: Meeting) => {
-
+            this.updateMeetings();
+          }, (resp) => {
+            console.log(resp.error.message);
           });
         }, (reason) => {
         });

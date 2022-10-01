@@ -20,7 +20,7 @@ public class MedicalFacilityEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    protected long id;
+    protected Long id;
 
     protected String adresse;
 }
