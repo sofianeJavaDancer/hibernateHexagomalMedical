@@ -5,6 +5,7 @@ import { forkJoin } from 'rxjs';
 import {MeetingService} from '../../services/meeting.service';
 import {MedecinService} from '../../services/medecin.service';
 import {PatientService} from '../../services/patient.service';
+import { ToastService } from '../../services/toast.service';
 
 import {Meeting} from '../../models/meeting';
 import {Medecin} from '../../models/medecin';
@@ -24,7 +25,8 @@ export class MeetingComponent implements OnInit {
   constructor(private meetingService: MeetingService,
   private medecinService: MedecinService,
   private patientService: PatientService,
-  private modalService: NgbModal) { }
+  private modalService: NgbModal,
+  private toastService: ToastService) { }
 
   ngOnInit(): void {
     this.updateMeetings();
@@ -47,8 +49,9 @@ export class MeetingComponent implements OnInit {
         modalRef.result.then((meeting: Meeting) => {
           this.meetingService.add(meeting).subscribe((createdMeeting: Meeting) => {
             this.updateMeetings();
+            this.toastService.showSuccess('Création avec succes');
           }, (resp) => {
-            console.log(resp.error.message);
+            this.toastService.showError(resp.error.message);
           });
         }, (reason) => {
         });

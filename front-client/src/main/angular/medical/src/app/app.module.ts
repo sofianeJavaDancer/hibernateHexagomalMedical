@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MeetingModalComponent } from './components/meeting/meeting-modal/meeting-modal.component';
 import { MedicalFacilityModalComponent } from './components/facility/medical-facility-modal/medical-facility-modal.component';
+import { ToastComponent } from './components/commun/toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MedicalFacilityModalComponent } from './components/facility/medical-fac
     MeetingComponent,
     FacilityComponent,
     MeetingModalComponent,
-    MedicalFacilityModalComponent
+    MedicalFacilityModalComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,
